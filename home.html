@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PennyWise Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLaySVzu4TlviqpMAP_TnXrkLgTigXGE0pB2a_Z-njeTNshekbhOJcCYVLyK4b8NJr3JY&usqp=CAU">
+    <style>
+        body{font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif  ;}
+        /* .aa{padding-left: 260px;} */
+        #show{font-size: 40px;}
+        .s::-webkit-outer-spin-button,
+.s::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.sav{
+    font-style: oblique;
+    color: brown;
+}
+.con{
+    background-color: beige;
+}
+
+
+    </style>
+</head>
+
+<body class="bg-dark">
+    <nav class="bg-warning mb-5">
+        <div>
+            <div class="row">
+                <div class="col-6">
+                    <h1 class="text-white ms-3">PennyWise</h1>
+                </div>
+                <div class="col-6">
+                    <button style="float: right;" type="button" class="btn btn-danger m-2" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+   
+
+    <div class="container p-5 con rounded">
+        <div class="row text-center">
+            <h1 id="welcome">welcome</h1>
+        </div>
+        <div id="dang"> </div>
+        <div class="row aa">
+            <div class="col-1"></div>
+            <div class="col-3 ">
+                <div class=" pt-5 ">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="add_des" placeholder="Enter Description" >
+                      </div>
+                    <div class="mb-3">
+                      <input type="number"  class="form-control s" id="add_amt" placeholder="Enter Amount" required>
+                      <div id="incfeild" class="text-danger"></div>
+                    </div>                    
+                    <button type="submit" class="btn btn-warning w-100" onclick="add()">Add</button>
+                </div>
+            </div>
+            <div class="col-3 sav ms-5 rounded p-5 text-center">
+                <h2>Your Savings</h2>
+                <div id="show"></div>
+            </div>
+            <div class="col-4">
+                <div class=" p-5  aa">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="exp_des" placeholder="Enter Description" required>
+                      </div>
+                    <div class="mb-3">
+                      <input type="number" class="form-control s" id="exp_amt" placeholder="Enter Amount" required>
+                      <div id="exceed" class="text-danger"></div>
+                    </div>
+                                        
+                    <button type="submit" class="btn btn-danger w-100" onclick="exp()">Expense</button>
+                </div>
+            </div>
+            <div class="col-1 "></div>
+        </div>
+        <div class="row mt-4 ms-5">
+            <!-- <div class="col-1"></div> -->
+            <div class="col-4  me-1 ">
+                <div class="text-center">
+                    <h4>INCOME</h4>
+                </div>
+                <div class="bg-white rounded p-2">
+                    <table class="table table-striped ">
+                        <thead>
+                            <tr>
+                                <th class="w-50">TYPE</th>
+                                <th class="w-50">AMOUNT</th>
+                                <th class="w-50">BALANCE</th>
+                            </tr>
+                        </thead>
+                       
+                        <tbody id="incresult">
+                          
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+            <div class="col-3"></div>
+            <div class="col-4  ms-5">
+                <div class="text-center">
+                    <h4>EXPENSE</h4>
+                </div>
+                <div class="bg-white rounded p-2">
+                    <table class="table table-striped ">
+                        <thead>
+                            <tr>
+                                <th class="w-50">TYPE</th>
+                                <th class="w-50">AMOUNT</th>
+                                <th class="w-50">BALANCE</th>
+                            </tr>
+                        </thead>
+                       
+                        <tbody id="expresult">
+                          
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+</body>
+<script src="./script.js"></script>
+</html>
